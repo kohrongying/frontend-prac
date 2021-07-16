@@ -1,0 +1,110 @@
+:root {
+    --yellow: hsl(51, 100%, 49%);
+    --red: hsl(7, 99%, 70%);
+    --dark-cyan: hsl(167, 40%, 24%);
+    --cyan: hsl(168, 34%, 41%);
+    --dark-blue: hsl(198, 62%, 26%);
+    
+    --dark-gray: hsl(213, 9%, 39%);
+    --gray-blue: hsl(210, 4%, 67%);
+    --mobile-width: 375px;
+    --desktop-width: 1440px;
+}
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin bg-image($url) {
+    background-image: url($url);
+    background-size: cover;
+    background-repeat: no-repeat;    
+}
+
+
+// Landing 
+// These styles determine the landing hero image
+// as well as the navbar
+
+
+.landing {
+    @include bg-image("./images/desktop/image-header.jpg");
+    min-height: 100vh;
+    color: white;
+}
+
+.nav {
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    @include flex-row();
+    justify-content: space-between;
+}
+
+.nav__items {
+    list-style-type: none;
+    @include flex-row();
+
+}
+
+.nav__item {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.landing__title {
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 4px;
+    padding-top: 60px;
+}
+
+/*
+Grid 
+*/ 
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.service {
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.service__text_wrapper {
+    width: 60%;
+}
+
+.service__bg {
+    background-size: cover;
+    background-repeat: no-repeat;  
+    width: 100%;
+}
+
+.service__img__text_wrapper {
+    width: 50%;
+    text-align: center;
+}
+
+[data-bg="graphic"] {
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    @include bg-image("./images/desktop/image-graphic-design.jpg");
+}
+[data-bg="photography"] {
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    @include bg-image("./images/desktop/image-photography.jpg");
+}
