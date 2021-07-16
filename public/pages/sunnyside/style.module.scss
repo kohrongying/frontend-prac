@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow:400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fraunces:700,900&display=swap');
+
 :root {
     --yellow: hsl(51, 100%, 49%);
     --red: hsl(7, 99%, 70%);
@@ -5,10 +8,52 @@
     --cyan: hsl(168, 34%, 41%);
     --dark-blue: hsl(198, 62%, 26%);
     
-    --dark-gray: hsl(213, 9%, 39%);
+    --dark-gray: hsl(212, 27%, 19%);
     --gray-blue: hsl(210, 4%, 67%);
     --mobile-width: 375px;
     --desktop-width: 1440px;
+
+    --normal-font-size: 3vmin;
+}
+
+p {
+    font-family: 'Barlow';
+    color: var(--gray-blue);
+    font-size: var(--normal-font-size);
+    line-height: calc(var(--normal-font-size) * 1.4);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fraunces';
+    color: var(--dark-gray);
+}
+
+h1 {
+    font-size: calc(4 * var(--normal-font-size));
+}
+
+h2 {
+    font-size: calc(2.8 * var(--normal-font-size));
+}
+
+h3 {
+    font-size: calc(2.5 * var(--normal-font-size));
+}
+
+h4 {
+    font-size: calc(2.2 * var(--normal-font-size));
+}
+
+h5 {
+    margin-top: 5vmin;
+    margin-bottom: 5vmin;
+    font-size: calc(1.8 * var(--normal-font-size));
+}
+
+h6 {
+    margin-top: 4vmin;
+    margin-bottom: 4vmin;
+    font-size: calc(1.2 * var(--normal-font-size));
 }
 
 @mixin flex-row {
@@ -55,7 +100,6 @@
 
 .landing__title {
     text-align: center;
-    font-size: 40px;
     letter-spacing: 4px;
     padding-top: 60px;
 }
@@ -90,21 +134,48 @@ Grid
 .service__img__text_wrapper {
     width: 50%;
     text-align: center;
+    p {
+        color: var(--dark-gray);
+    }
 }
 
 [data-bg="graphic"] {
-    min-height: 600px;
-    display: flex;
-    flex-direction: column;
     justify-content: flex-end;
-    align-items: center;
     @include bg-image("./images/desktop/image-graphic-design.jpg");
+    padding-bottom: 8vmin;
 }
 [data-bg="photography"] {
-    min-height: 600px;
-    display: flex;
-    flex-direction: column;
     justify-content: flex-end;
-    align-items: center;
     @include bg-image("./images/desktop/image-photography.jpg");
+    padding-bottom: 8vmin;
+}
+
+.link {
+    font-family: 'Fraunces';
+    font-size: calc(0.8 * var(--normal-font-size));
+    text-transform: uppercase;
+    position: relative;
+    padding-left: 1.6vmin;
+    padding-right: 1.6vmin;
+    z-index: 9;
+
+    &::after {
+        content: "";
+        background-color: var(--red);
+        opacity: 0.2;
+        position: absolute;
+        left: 0%;
+        bottom: -15%;
+        width: 100%;
+        height: 1.3vmin;
+        z-index: -1;
+    }
+
+    &:hover {
+        cursor: pointer;
+        color: var(--dark-cyan);
+        &::after {
+            opacity: 0.5;
+        }
+    }
 }
