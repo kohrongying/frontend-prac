@@ -13,6 +13,7 @@
 		"preact-iso": "^2.0.3"
 	},
 	"devDependencies": {
+		"sass": "^1.35.2",
 		"wmr": "^3.4.0"
 	}
 }
