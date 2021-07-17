@@ -5,6 +5,9 @@ import ImgStandOut from './images/desktop/image-stand-out.jpg';
 import ImgGraphic from './images/desktop/image-graphic-design.jpg';
 import ImgPhotography from './images/desktop/image-photography.jpg';
 import ImgLanding from './images/desktop/image-header.jpg';
+import ImgEmily from './images/image-emily.jpg';
+import ImgJennie from './images/image-jennie.jpg';
+import ImgThomas from './images/image-thomas.jpg';
 
 const Prac = () => (
   <>
@@ -48,6 +51,40 @@ const Prac = () => (
       </div>    
     </article>
 	</section>
+
+  <section class={styles.testimonial}>
+    <h5>CLIENT TESTIMONIALS</h5>
+    <div class={styles.testimonial__grid}>
+      <div class={styles.testimonial__item}>
+        <img src={ImgEmily} alt="emily" />
+        <p>We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.</p>
+
+        <h6>Emily R.</h6>
+        <span>Marketing Director</span>
+      </div>
+
+      <div class={styles.testimonial__item}>
+        <img src={ImgThomas} alt="thomas" />
+        <p>We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.</p>
+
+        <h6>Thomas S.</h6>
+        <span>Chief Operating Officer</span>
+      </div>
+
+      <div class={styles.testimonial__item}>
+        <img src={ImgJennie} alt="jennie" />
+        <p>We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.</p>
+
+        <h6>Jennie F.</h6>
+        <span>Business Owner</span>
+      </div>
+    </div>
+  </section>
+
+  <section class={styles.gallery}>
+    
+
+  </section>
   </>
 );
 

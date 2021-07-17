@@ -175,3 +175,48 @@ Grid
         }
     }
 }
+
+/*
+    Testimonials
+*/
+
+.testimonial {
+    padding: 15vmin;
+
+    h5 {
+        text-align: center;
+        color: var(--gray-blue);
+        letter-spacing: 4px;
+    }
+}
+
+.testimonial__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5vmin;
+    text-align: center;
+}
+
+.testimonial__item {
+    margin-top: 8vmin;
+
+    img {
+        width: 12vmin;
+        clip-path: circle(50% at 50% 50%);
+    }
+
+    p {
+        margin-top: 8vmin;
+        margin-bottom: 8vmin;
+        color: var(--dark-gray)
+    }
+
+    h6 {
+        margin-top: 6vmin;
+        margin-bottom: 2vmin;
+    }
+
+    span {
+        color: var(--gray-blue)
+    }
+}
