@@ -8,6 +8,10 @@ import ImgLanding from './images/desktop/image-header.jpg';
 import ImgEmily from './images/image-emily.jpg';
 import ImgJennie from './images/image-jennie.jpg';
 import ImgThomas from './images/image-thomas.jpg';
+import ImgMilk from './images/desktop/image-gallery-milkbottles.jpg';
+import ImgCone from './images/desktop/image-gallery-cone.jpg';
+import ImgOrange from './images/desktop/image-gallery-orange.jpg';
+import ImgCube from './images/desktop/image-gallery-sugarcubes.jpg';
 
 const Prac = () => (
   <>
@@ -82,8 +86,10 @@ const Prac = () => (
   </section>
 
   <section class={styles.gallery}>
-    
-
+    <img src={ImgMilk} class={styles.service__bg}/>
+    <img src={ImgOrange} class={styles.service__bg}/>
+    <img src={ImgCone} class={styles.service__bg}/>
+    <img src={ImgCube} class={styles.service__bg}/>
   </section>
   </>
 );
