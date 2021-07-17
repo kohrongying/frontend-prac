@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Barlow:400&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Fraunces:700,900&display=swap');
-
 :root {
     --yellow: hsl(51, 100%, 49%);
     --red: hsl(7, 99%, 70%);
@@ -13,7 +10,7 @@
     --mobile-width: 375px;
     --desktop-width: 1440px;
 
-    --normal-font-size: 3vmin;
+    --normal-font-size: 2vmin;
 }
 
 p {
@@ -61,8 +58,7 @@ h6 {
     flex-direction: row;
 }
 
-@mixin bg-image($url) {
-    background-image: url($url);
+@mixin bg-image {
     background-size: cover;
     background-repeat: no-repeat;    
 }
@@ -74,7 +70,7 @@ h6 {
 
 
 .landing {
-    @include bg-image("./images/desktop/image-header.jpg");
+    @include bg-image;
     min-height: 100vh;
     color: white;
 }
@@ -141,12 +137,12 @@ Grid
 
 [data-bg="graphic"] {
     justify-content: flex-end;
-    @include bg-image("./images/desktop/image-graphic-design.jpg");
+    @include bg-image;
     padding-bottom: 8vmin;
 }
 [data-bg="photography"] {
     justify-content: flex-end;
-    @include bg-image("./images/desktop/image-photography.jpg");
+    @include bg-image;
     padding-bottom: 8vmin;
 }
 

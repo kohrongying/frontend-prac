@@ -3,6 +3,8 @@ import Logo from './images/logo.svg'
 import ImgTransform from './images/desktop/image-transform.jpg';
 import ImgStandOut from './images/desktop/image-stand-out.jpg';
 import ImgGraphic from './images/desktop/image-graphic-design.jpg';
+import ImgPhotography from './images/desktop/image-photography.jpg';
+import ImgLanding from './images/desktop/image-header.jpg';
 
 const Prac = () => (
   <>
@@ -32,27 +34,25 @@ const Prac = () => (
       </div>
     </article>
 
-    <article class={styles.service} data-bg="graphic">  
+    <article class={styles.service} data-bg="graphic"  style={{ backgroundImage: `url(${ImgGraphic})` }}>  
       <div class={styles.service__img__text_wrapper}>
         <h5>Graphic Design</h5>
         <p>Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential client's attention.</p>
       </div>    
     </article>
 
-    <article class={styles.service} data-bg="photography">  
+    <article class={styles.service} data-bg="photography" style={{ backgroundImage: `url(${ImgPhotography})` }}>  
       <div class={styles.service__img__text_wrapper}>
         <h5>Photography</h5>
         <p>Increase your credibility by getting the most stunning, high-quality photos that improve your business image.</p>
       </div>    
     </article>
-
-
 	</section>
   </>
 );
 
 const Landing = () => (
-	<section class={styles.landing}>
+	<section class={styles.landing} style={{ backgroundImage: `url(${ImgLanding})` }}>    
     <nav class={styles.nav}>
       <div>
         <img src={Logo} alt="logo" />
