@@ -2,7 +2,7 @@
     --yellow: hsl(51, 100%, 49%);
     --red: hsl(7, 99%, 70%);
     --dark-cyan: hsl(167, 40%, 24%);
-    --cyan: hsl(168, 34%, 41%);
+    --cyan: hsl(168, 34%, 61%);
     --dark-blue: hsl(198, 62%, 26%);
     
     --dark-gray: hsl(212, 27%, 19%);
@@ -219,4 +219,47 @@ Grid
     span {
         color: var(--gray-blue)
     }
+}
+
+/*
+Image Gallery
+*/
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/*
+Footer
+*/
+
+.footer {
+    background-color: var(--cyan);
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__links {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    width: 30%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: var(--dark-cyan);
+}
+
+.footer_link {
+    text-align: center;
+}
+
+.footer__social {
+    @include flex-row;
+    justify-content: space-around;
+    width: 10%;
+    padding: 30px;
 }
