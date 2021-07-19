@@ -7,10 +7,8 @@
     
     --dark-gray: hsl(212, 27%, 19%);
     --gray-blue: hsl(210, 4%, 67%);
-    --mobile-width: 375px;
-    --desktop-width: 1440px;
 
-    --normal-font-size: 2vmin;
+    --normal-font-size: 1rem;
 }
 
 p {
@@ -42,14 +40,10 @@ h4 {
 }
 
 h5 {
-    margin-top: 5vmin;
-    margin-bottom: 5vmin;
     font-size: calc(1.8 * var(--normal-font-size));
 }
 
 h6 {
-    margin-top: 4vmin;
-    margin-bottom: 4vmin;
     font-size: calc(1.2 * var(--normal-font-size));
 }
 
@@ -61,8 +55,24 @@ h6 {
 @mixin bg-image {
     background-size: cover;
     background-repeat: no-repeat;    
+    background-position: center;
 }
 
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+      @content;
+    }
+  }
+  
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
 
 // Landing 
 // These styles determine the landing hero image
@@ -79,13 +89,13 @@ h6 {
     padding-top: 30px;
     padding-left: 20px;
     padding-right: 20px;
-    @include flex-row();
+    @include flex-row;
     justify-content: space-between;
 }
 
 .nav__items {
     list-style-type: none;
-    @include flex-row();
+    @include flex-row;
 
 }
 
@@ -98,6 +108,7 @@ h6 {
     text-align: center;
     letter-spacing: 4px;
     padding-top: 60px;
+    color: white;
 }
 
 /*
@@ -106,24 +117,39 @@ Grid
 
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+
+    @include desktop  {
+        grid-template-columns: 1fr 1fr; 
+    }
 }
 
 .service {
-    min-height: 600px;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: white;
+    @include desktop  {
+        min-height: 550px; 
+    }
 }
 
 .service__text_wrapper {
-    width: 60%;
+    width: clamp(80%, 50%, 60%);
+    padding-top: 20px;
+    padding-bottom: 50px;
+    text-align: center;
+    @include desktop  {
+        text-align: left;
+    }
 }
 
 .service__bg {
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;  
+    height: 100%;
     width: 100%;
 }
 
@@ -176,6 +202,8 @@ Grid
     }
 }
 
+
+
 /*
     Testimonials
 */
@@ -192,13 +220,14 @@ Grid
 
 .testimonial__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 5vmin;
     text-align: center;
 }
 
 .testimonial__item {
     margin-top: 8vmin;
+    margin-bottom: 8vmin;
 
     img {
         width: 12vmin;
@@ -227,7 +256,7 @@ Image Gallery
 
 .gallery {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 /*
@@ -247,9 +276,11 @@ Footer
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
-    width: 30%;
+    width: clamp(355px, 30%, 30%);
     padding-top: 20px;
     padding-bottom: 20px;
+    padding-left: 0;
+    padding-right: 0;
     color: var(--dark-cyan);
 }
 
@@ -260,6 +291,6 @@ Footer
 .footer__social {
     @include flex-row;
     justify-content: space-around;
-    width: 10%;
+    width: clamp(355px, 10%, 10%);
     padding: 30px;
 }
